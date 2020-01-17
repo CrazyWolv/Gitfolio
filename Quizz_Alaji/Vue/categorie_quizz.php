@@ -14,12 +14,27 @@ require_once('../Controler/quizz_controler.php');
 </head>
 
 <body>
-    <div class="d-flex justify-content-around mt-4">
-    <?php
-    echo $questionsCategorie[0]->getQuestion();
-    ?>
+    <div class="d-flex align-items-center flex-column mt-4">
+    <a href="index.php"><button class="btn btn-secondary mb-5">Retour à l'Index</button></a>
     
-        <a href="index.php"><button class="btn btn-secondary">Retour à l'Index</button></a>
+        <?php
+        echo '<h2>' . $questionsCategorie[0]->getQuestion() . '</h2>';
+        echo "<br>";
+        ?>
+
+        <div class="text-justify mt-3">
+            <form action="../Controler/quizz_controler.php" method="post">
+                <?php
+                foreach ($reponseCat as $key => $value) {
+                ?>
+                    <input class="mr-4" type="radio"><?php
+                                        echo $value->getReponse() .'<br>';
+                                    }
+                                        ?>
+
+                <input class="mt-3" type="submit" value="C'est la bonne !">
+            </form>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

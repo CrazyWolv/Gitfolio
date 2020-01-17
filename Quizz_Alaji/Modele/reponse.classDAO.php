@@ -15,4 +15,14 @@ class ReponseDAO extends DbConnect
         $results = parent::executeQuery($sql); //
         return $results->fetchAll(); //affiche le résultat de la requête SQL (= tableau des questions dans le controler)
     }
+
+    public function getReponseByQuestion($id)
+    {
+        $sql = "SELECT * FROM reponses WHERE idQ = :id_question";
+        $params = array(
+            "id_question" => $id
+        );
+        $results = parent::executeQuery($sql, $params); //
+        return $results->fetchAll();
+    }
 }

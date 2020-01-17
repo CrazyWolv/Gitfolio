@@ -12,6 +12,11 @@ if (isset($_GET['categorie'])) {
     $arrQuestionsCategorie = $questionDAO->getQuestionByCategorie($_GET['categorie']);
     foreach ($arrQuestionsCategorie as $key => $value) {
         $questionsCategorie[] = new Questions($value);
+        // var_dump($value);
+        $ar = $reponseDAO->getReponseByQuestion($value['id_question']);
+    }
+    foreach ($ar as $key => $value) {
+        $reponseCat[] = new Reponse($value);
     }
 } else {
     header('Location : ../Vue/index.php');

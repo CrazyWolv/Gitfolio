@@ -18,7 +18,7 @@ class QuestionDAO extends DbConnect
 
     public function getQuestionByCategorie($paramCategorie)
     {
-        $sql = "SELECT question FROM questions WHERE categorie = :paramcategorie";
+        $sql = "SELECT * FROM questions WHERE categorie = :paramcategorie";
         $params = array(
             "paramcategorie" => $paramCategorie
         );
