@@ -6,6 +6,9 @@ class Voiture
     public $mark;
     public $color;
     public $year;
+    public $_vitesse = 0;
+    public $_etat = 0;
+    
     function __construct($c_model, $c_mark, $c_color, $c_year)
     {
         $this->modele = $c_model;
@@ -54,13 +57,11 @@ class Voiture
         return;
     }
 
-    public $_vitesse = 0;
     function plusVitesse()
     {
         $this->_vitesse = $this->_vitesse + 50;
     }
-
-    public $_etat = 0;
+    
     function setEtat($_etat)
     {
         $this->_etat = $_etat;
