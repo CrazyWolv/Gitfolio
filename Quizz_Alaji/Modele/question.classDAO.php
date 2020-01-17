@@ -9,7 +9,7 @@ class QuestionDAO extends DbConnect
         parent::connect();
     }
 
-    public function gettAllQuestions()
+    public function getAllQuestions()
     {
         $sql = "SELECT * FROM questions"; // on prend toutes les questions
         $results = parent::executeQuery($sql); //
