@@ -42,4 +42,10 @@ class Questions extends Entity
     {
         $this->categorie = $n;
     }
+
+    public function DisplayQuestion(){
+        ?>
+
+        <h1> <?php 
+    }
 }
